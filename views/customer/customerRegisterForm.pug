@@ -1,0 +1,31 @@
+extends ../layouts/layout
+
+block mainSection
+
+  section(class="container")
+    section(class="formContainer")
+
+      form(class='form' action="/customer/register" method="POST") 
+        input(class='form-input' id="identification" name="identification" placeholder="Identification" type="text" value= customer && !created ? customer.identification : '')
+        input(class='form-input' id="name" name="name" placeholder="Name" type="text" value= customer && !created  ? customer.name : '')
+        input(class='form-input' id="sourName" name="sourName" placeholder="Sour name" type="text" value= customer && !created ? customer.sourName : '')
+        input(class='form-input' id="email" name="email" placeholder="Email" type="email" value= customer && !created ? customer.email : '')
+        input(class='form-input' id="address" name="address" placeholder="Address" type="text" value= customer && !created ? customer.address : '')
+        input(class='form-input' id="phone" name="phone" placeholder="Phone" type="text" value= customer && !created ? customer.phone : '')
+        
+        input(id="btnSubmit" value="Save" type="submit")
+
+    if alreadyExist
+      section(class='alreadyExist')
+        h3 Customer already registered
+        p The customer with id #{ customer.identification } is already registered
+
+    if created
+      section(class='created')
+        h3 Customer registered
+        p The customer with id #{ customer.identification } has been registered
+
+    if errors
+      section(class='errors')
+        each error in errors
+          p(class='error-message')=error.msg

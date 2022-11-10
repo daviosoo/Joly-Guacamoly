@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    color: #e4e0ba;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #b6bb18;
+}
+
+header{
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #773611;
+}
+
+.reservedRigthsText {
+    width: 60%;
+}
+
+.linksContainer > a{
+    display: block;
+}
+.linksContainer > a:first-child{
+    margin-bottom: .5rem;
+}
+
+.boxes-links{
+    border: 1px solid #b6bb18;
+
+    padding: 1.5rem 1.5rem;
+
+    font-size: 1rem;
+    letter-spacing: .3rem;
+
+    transition: all .3s;
+}
+
+.boxes-links:hover{
+    border: 1px solid #773611;
+    background-color: #b6bb18;
+}
+
+main{
+    width: 70%;
+    height: 100%;
+}
+
+.container{
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer{
+    background-color: #773611;
+
+    padding: 2rem 3rem;
+    
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    
+    flex-direction: column;
+}
+
+.form-input {
+    padding: .5rem 3rem;
+    margin: .5rem 2rem;
+
+    text-align: center;
+    color: #e4e0ba;
+
+    font-size: 1rem;
+
+    border: 1px solid #773611;
+    border-radius: 5px;
+
+    border-bottom: 1px solid #b6bb18;
+    outline: none;
+    
+    background-color: #773611;
+
+    transition: all .3s;
+}
+
+.form-input:focus{
+    
+    border: 1px solid #b6bb18;
+
+}
+
+.form-input::placeholder{
+    color: #e3e1d480;
+}
+
+.form-input:nth-child(4){
+    font-size: .7rem;
+}
+
+.form-input:nth-child(4)::placeholder{
+    font-size: 1rem;
+}
+
+#btnSubmit{
+    margin: 2rem 2rem 1rem 2rem;
+    padding: .5rem 3rem;
+
+    border-radius: 0;
+    border: 1px solid #b6bb18;
+
+    background-color: #773611;
+
+    transition: all .3s;
+
+    cursor: pointer;
+}
+
+#btnSubmit:hover{
+    border: 1px solid #773611;
+    background-color: #b6bb18;
+}
+
+.errors{
+    padding: 1rem;
+}
+
+.error-message{
+    color: red;
+}
+
+.alreadyExist{
+    padding: 1rem;
+}
+.created{
+    padding: 1rem;
+}
+
+
