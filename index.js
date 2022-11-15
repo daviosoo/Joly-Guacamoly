@@ -2,6 +2,7 @@ import express from "express"
 import { dataBase } from "./config/dataBase.js"
 
 import { customerRouter } from './router/customerRouter.js'
+import { productsRouter } from './router/productsRouter.js'
 
 import path from 'path'
 
@@ -26,6 +27,8 @@ try {
 app.use('/public', express.static('public'));
 
 app.use('/customer', customerRouter)
+app.use('/products', productsRouter)
+
 
 app.set('view engine', 'pug')
 app.set('views', './views')

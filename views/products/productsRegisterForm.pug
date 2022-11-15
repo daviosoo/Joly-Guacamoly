@@ -1,0 +1,30 @@
+extends ../layouts/layout
+
+block mainSection
+
+  section(class="container")
+    section(class="formContainer")
+
+      form(class='form' action="/products/register" method="POST") 
+        input(class='form-input' id="name" name="name" placeholder="Name" type="text" value= products && !created  ? products.name : '')
+        input(class='form-input' id="price" name="price" placeholder="Price" type="text" value= products && !created ? products.price : '')
+        input(class='form-input' id="reference" name="reference" placeholder="reference" type="text" value= products && !created ? products.reference : '')
+        input(class='form-input' id="quantity" name="quantity" placeholder="quantity" type="text" value= products && !created ? products.quantity : '')
+        input(class='form-input' id="description" name="description" placeholder="description" type="text" value= products && !created ? products.description : '')
+        
+        input(id="btnSubmit" value="Save" type="submit")
+
+    if alreadyExist
+      section(class='alreadyExist')
+        h3 product already registered
+        p The product with reference #{ products.reference } is already registered
+
+    if created
+      section(class='created')
+        h3 Customer registered
+        p The product with reference #{ products.reference } has been registered
+
+    if errors
+      section(class='errors')
+        each error in errors
+          p(class='error-message')=error.msg
